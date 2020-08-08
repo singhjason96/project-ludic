@@ -23,11 +23,16 @@ const useStyles = makeStyles((theme) => ({
   },
   contain: {
     margin: theme.spacing(2),
+    ["@media (min-width:780px)"]: {
+      width: '20%'
+    },
   },
   indCard: {
-    height: "400px",
     opacity: "0.7",
-    padding: "24px",
+    width: '200px',
+    ["@media (min-width:780px)"]: {
+      width: '100%'
+    },
   },
   titleStyle: {
     padding: "32px",
@@ -38,11 +43,19 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Roboto Slab, serif",
   },
   imgStyle: {
-    width: "200px",
+    width: "100%",
   },
   logo: {
     width: '20%'
-  }
+  },
+  bigContain: {
+    display: 'flex',
+    flexDirection: 'column',
+    ["@media (min-width:780px)"]: {
+      display: "flex",
+      flexDirection: "row",
+    },
+  },
 }));
 
 const People = () => {
@@ -65,12 +78,12 @@ const People = () => {
         <Typography variant="h3" align="center" className={classes.titleStyle}>
           Talent
         </Typography>
-        <Grid container alignItems="center" justify="center">
+        <Grid container alignItems="center" justify="center" className={classes.bigContain}>
           {data.map((el) => {
             return (
-              <Grid item xs={3} className={classes.contain}>
-                <Card variant="outlined" className={classes.indCard}>
-                  <CardContent>
+              <Grid item  className={classes.contain} align="center" justify="center">
+                <Card variant="outlined" className={classes.indCard} align="center" justify="center">
+                  <CardContent className={classes.contentStyle} align="center">
                     <img src={el.personPic} className={classes.imgStyle} />
                     <Typography variant="h5" className={classes.textStyle}>
                       {el.personName}
