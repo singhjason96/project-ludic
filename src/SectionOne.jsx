@@ -18,13 +18,16 @@ const useStyles = makeStyles((theme: Theme) =>
       color: 'white',
     },
     gridContainStyle: {
-      height: '100vh'
+      height: '100%'
     },
     videoStyle: {
       alignItems: 'center',
       width: '100% !important',
       height: '100% !important'
     },
+    welcomeStyle: {
+
+    }
   })
 );
 
@@ -34,10 +37,12 @@ export default function SectionOne() {
   var [showingAlert, setShowingAlert] = useState(true);
 
 
-
-  const timeout = () => setTimeout(() => {
-   setShowingAlert(false)
-  }, 2000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+     return  <div>yo</div>
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
 
 
@@ -45,7 +50,6 @@ export default function SectionOne() {
 
   return (
     <React.Fragment>
-      <Welcome onLoad={timeout}/>
         <ReactPlayer url={video} controls = {true} className={classes.videoStyle}/>
     </React.Fragment>
   );
