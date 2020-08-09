@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     header: {
       backgroundColor: "transparent",
+      display: 'flex',
     },
     linkStyle: {
       textDecoration: 'none',
@@ -33,12 +34,16 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       justifyContent: 'space-between'
     },
+    logoStyle: {
+      width: '10%'
+    },
   })
 );
 
 export default function ButtonAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const logo = require('./logo.png');
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -57,11 +62,15 @@ export default function ButtonAppBar() {
               Project Ludic
             </Typography>
           </Link>
+          <img src={logo} className={classes.logoStyle}/>
+
           <Link to="/talent" className={classes.linkStyle}>
             <Typography>Talent</Typography>
           </Link>
         </Toolbar>
-      </AppBar>
+      </AppBar> 
     </div>
   );
 }
+
+ 
