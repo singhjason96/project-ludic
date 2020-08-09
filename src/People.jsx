@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   imgStyle: {
     width: "100%",
-    filter: "brightness(200%)";
+    filter: "brightness(200%)",
   },
   logo: {
     width: "10%",
