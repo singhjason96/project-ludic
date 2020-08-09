@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       marginRight: theme.spacing(2),
+      justifyContent: 'center !important'
     },
     title: {
       flexGrow: 1,
