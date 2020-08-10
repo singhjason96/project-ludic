@@ -15,10 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       flexGrow: 1,
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
-      justifyContent: 'center !important'
-    },
     title: {
       flexGrow: 1,
       fontFamily: "'Noto Sans', sans-serif",
@@ -33,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       display: 'flex',
-      justifyContent: 'space-between'
+      justifyContent: 'center',
     },
     logoStyle: {
       width: '10%'
